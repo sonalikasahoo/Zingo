@@ -26,7 +26,10 @@ public class home_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        TextView name,licence,phone,email,region,address;
+        Intent receivedIntent = getIntent();
+        final String phNumber = receivedIntent.getStringExtra("phNumber");
+
+        final TextView name,licence,phone,email,region,address;
         name = (TextView)findViewById(R.id.wh_name);
         licence = (TextView)findViewById(R.id.license_no);
         phone = (TextView)findViewById(R.id.wh_number);
@@ -34,12 +37,19 @@ public class home_page extends AppCompatActivity {
         address = (TextView)findViewById(R.id.address);
 
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance()
-                .getReference().child("Distributors");
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                .getReference().child("Distributors").child(phNumber);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                name.setText(dataSnapshot.child("name").getValue().toString());
+                licence.setText(dataSnapshot.child("license").getValue().toString());
+                phone.setText(phNumber);
+                email.setText(dataSnapshot.child("email").getValue().toString());
+                address.setText(dataSnapshot.child("address1").getValue().toString()
+                +", "+dataSnapshot.child("city").getValue().toString() + ", "
+                +dataSnapshot.child("state").getValue().toString() + ", "+
+                        dataSnapshot.child("pincode").getValue().toString());
             }
 
             @Override
