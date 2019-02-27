@@ -8,18 +8,32 @@
     android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/etphNum"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter registered phone number"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:padding="5dp"
-        android:textAppearance="?android:textAppearanceLarge" />
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+91"
+            android:gravity="right"
+            android:layout_weight="1"/>
+        <EditText
+            android:id="@+id/etphNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter registered phone number"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:textAppearance="?android:textAppearanceLarge" />
+    </LinearLayout>
+
+
     <Button
         android:id="@+id/btGetCode"
         android:layout_width="match_parent"
@@ -50,6 +64,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="5dp"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <Button
+        android:id="@+id/btSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"
