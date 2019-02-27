@@ -55,7 +55,7 @@ public class signup extends AppCompatActivity {
                 final String contact = etContact.getText().toString();
                 final String email = etEmail.getText().toString();
                 final String region = etRegion.getText().toString();
-                final String address1 = etRegion.getText().toString();
+                final String address1 = etAddress1.getText().toString();
                 final String pincode = etPincode.getText().toString();
                 final String city = etCity.getText().toString();
                 final String state = etState.getText().toString();

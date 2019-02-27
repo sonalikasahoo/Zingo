@@ -40,7 +40,7 @@
             android:id="@+id/wh_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Name" />
@@ -48,7 +48,7 @@
             android:id="@+id/license_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Licence No." />
@@ -57,7 +57,7 @@
             android:id="@+id/wh_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Contact Number" />
@@ -65,7 +65,7 @@
             android:id="@+id/wh_mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Email Address" />
@@ -73,15 +73,15 @@
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Address" />
         <TextView
-            android:id="@+id/add2"
+            android:id="@+id/region"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
+            android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Region" />
@@ -91,6 +91,14 @@
             android:layout_marginTop="3dp"
             android:layout_marginBottom="3dp"
             android:background="#a09d9d"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:text="Retailers"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvRetailers"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import POJOs.RetailerDetails;
 
 public class add_retailer extends AppCompatActivity {
+
+    public static final String TAG = "pikachu";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +41,11 @@ public class add_retailer extends AppCompatActivity {
         retailer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(TAG, "onClick: add retailer in addretailer");
                 final String rtName = name.getText().toString();
                 final String rtId = uid.getText().toString();
                 final String rtContact = number.getText().toString();
-                final String rtAddress = number.getText().toString();
+                final String rtAddress = address.getText().toString();
 
                 final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
                         .getReference().child("Distributors").child(phNumber);
@@ -52,9 +56,15 @@ public class add_retailer extends AppCompatActivity {
                         rd.setRtName(rtName);
                         rd.setRtContact(rtContact);
                         rd.setRtAddress(rtAddress);
-
+                        Log.d(TAG, "onDataChange: Adding Retailer");
                         databaseReference.child("Retailers").child(rtId)
                                 .setValue(rd);
+                        Toast.makeText(add_retailer.this, "Retailer details addded!",
+                                Toast.LENGTH_SHORT).show();
+
+                        Intent retailer;
+                        retailer= new Intent(getApplicationContext(),home_page.class);
+                        startActivity(retailer);
                     }
 
                     @Override
@@ -64,12 +74,7 @@ public class add_retailer extends AppCompatActivity {
                 });
 
 
-                Toast.makeText(add_retailer.this, "Retailer details addded!",
-                        Toast.LENGTH_SHORT).show();
 
-                Intent retailer;
-                retailer= new Intent(getApplicationContext(),home_page.class);
-                startActivity(retailer);
             }
         });
     }

@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:src="@drawable/rtLogo"
+                    android:src="@drawable/rtlogo"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_width="18dp"

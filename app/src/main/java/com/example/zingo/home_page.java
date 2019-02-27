@@ -88,10 +88,10 @@ public class home_page extends AppCompatActivity {
         addRetailer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home_page;
-                home_page = new Intent(getApplicationContext(), add_retailer.class);
-                home_page.putExtra("phNumber", phNumber);
-                startActivity(home_page);
+                Intent i;
+                i = new Intent(getApplicationContext(), add_retailer.class);
+                i.putExtra("phNumber", phNumber);
+                startActivity(i);
             }
         });
 
@@ -99,6 +99,7 @@ public class home_page extends AppCompatActivity {
 
 
     private void refreshRV() {
+        Log.d(TAG, "refreshRV: Refreshing Recycler view");
         rtList.clear();
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
                 .getReference().child("Distributors").child(phNumber).child("Retailers");
