@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "443886616333",
+    "firebase_url": "https://zingo-cc821.firebaseio.com",
+    "project_id": "zingo-cc821",
+    "storage_bucket": "zingo-cc821.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443886616333:android:208de26d2da9b308",
+        "android_client_info": {
+          "package_name": "com.example.zingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443886616333-acrh7sq47jm5p9nmeca4ote31kj83bd3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zingo",
+            "certificate_hash": "00164910aad0d7d4841db9c47df599f62e821b99"
+          }
+        },
+        {
+          "client_id": "443886616333-okcu42idktdk9hs2r30r1hugb1s101r1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxKcdyYniyX_Zpqk9CGC3Uw4B_c6-gh9U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443886616333-okcu42idktdk9hs2r30r1hugb1s101r1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
