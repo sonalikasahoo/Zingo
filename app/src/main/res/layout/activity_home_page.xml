@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Account info "
+            tools:ignore="DuplicateIds,InvalidId" />
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="85dp"
+            android:src="@drawable/user_logo"
+            android:padding="10dp"/>
+
+
+        <TextView
+            android:id="@+id/wh_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Name" />
+        <TextView
+            android:id="@+id/license_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Licence No." />
+
+        <TextView
+            android:id="@+id/wh_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Contact Number" />
+        <TextView
+            android:id="@+id/wh_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Email Address" />
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Address" />
+        <TextView
+            android:id="@+id/add2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:text="Region" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            tools:targetApi="28">
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/logo" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+            <TextView
+                android:id="@+id/return_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="45dp"
+                android:layout_marginLeft="8dp"
+                android:padding="2dp"
+                android:text="Return number 1"
+                android:textColor="@color/blue"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="45dp"
+                android:layout_marginLeft="8dp"
+                android:padding="2dp"
+                android:text="No. of Products"
+                android:textColor="@color/blue"
+                android:textSize="18dp" />
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:padding="2dp"
+                    android:text="Status"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/date_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="3dp"
+                    android:text="Date of return"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/time_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Time of return"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="80dp"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/logo"
+                android:padding="5dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <TextView
+                android:id="@+id/return_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:textSize="18dp"
+                android:textColor="@color/blue"
+                android:text="Return number 2"
+                android:layout_marginRight="45dp"/>
+                <TextView
+                    android:id="@+id/product2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/blue"
+                    android:text="No. of Products"
+                    android:layout_marginRight="45dp"/>
+                <TextView
+                    android:id="@+id/stat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/blue"
+                    android:text="Status"
+                    android:layout_marginRight="45dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/date_2"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginBottom="3dp"
+                    android:text = "Date of return"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/time_2"
+                    android:layout_gravity="right"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text = "Time of return"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="80dp"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/logo"
+                android:padding="5dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                android:id="@+id/return_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:textSize="18dp"
+                android:textColor="@color/blue"
+                android:text="Return number 3"
+                android:layout_marginRight="45dp"/>
+                <TextView
+                    android:id="@+id/product3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/blue"
+                    android:text="No of Products"
+                    android:layout_marginRight="45dp"/>
+                <TextView
+                    android:id="@+id/stats3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/blue"
+                    android:text="Status"
+                    android:layout_marginRight="45dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/date_3"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginBottom="3dp"
+                    android:text = "Date of return"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/time_3"
+                    android:layout_gravity="right"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text = "Time of return"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/black"/>
+        <Button
+            android:id="@+id/retailer_add"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"
+            android:text=" ADD A RETAILER " />
+    </LinearLayout>
+
+
+
+</ScrollView>
