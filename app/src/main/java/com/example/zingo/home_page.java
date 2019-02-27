@@ -126,9 +126,9 @@ public class home_page extends AppCompatActivity {
 
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(menu.menu_from_home, menu);
+        getMenuInflater().inflate(R.menu.menu_from_home, menu);
         return true;
     }
 
@@ -141,5 +141,5 @@ public class home_page extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 }
