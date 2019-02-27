@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         btSignUp = findViewById(R.id.btSignup);
 
 
-        btGetCode.setOnClickListener(new View.OnClickListener() {
+        /*btGetCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance()
@@ -76,12 +76,33 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             }
-        });
+        });*/
 
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                verifySignInCode();
+                //verifySignInCode();
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                        .getReference().child("Distributors");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(!dataSnapshot.hasChild("+91"+etPhNum.getText().toString())) {
+                            Toast.makeText(MainActivity.this, "Phone number not registered",
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            //sendVerificationCode();
+                            Intent i = new Intent(MainActivity.this, home_page.class);
+                            i.putExtra("phNumber", "+91"+etPhNum.getText().toString());
+                            startActivity(i);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
 
@@ -145,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             etPhNum.requestFocus();
             return;
         }
-
+        Log.d(TAG, "sendVerificationCode: "+phoneNumber);
         PhoneAuthProvider.getInstance().verifyPhoneNumber(phoneNumber,
                 60, TimeUnit.SECONDS, this, mCallbacks);
     }
@@ -164,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
             codeSent = s;
+            Log.d(TAG, "onCodeSent: "+codeSent);
         }
     };
 }

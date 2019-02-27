@@ -46,8 +46,6 @@ public class signup extends AppCompatActivity {
 
 
 
-        final FirebaseUser user1 = FirebaseAuth.getInstance().getCurrentUser();
-
 
 
         btSubmit.setOnClickListener(new View.OnClickListener() {

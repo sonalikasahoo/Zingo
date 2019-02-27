@@ -1,13 +1,25 @@
 package com.example.zingo;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class home_page extends AppCompatActivity {
+
+    public static final String TAG = "pikachu";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +32,25 @@ public class home_page extends AppCompatActivity {
         phone = (TextView)findViewById(R.id.wh_number);
         email = (TextView)findViewById(R.id.wh_mail);
         address = (TextView)findViewById(R.id.address);
+
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                .getReference().child("Distributors");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
 
         TextView return1,date1,time1,product1,status1;
         TextView return2,date2,time2,product2,status2;
