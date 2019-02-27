@@ -75,7 +75,14 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(getApplicationContext(), "Successfully Logged In!",
                                     Toast.LENGTH_SHORT).show();
-                            //FirebaseUser user = task.getResult().getUser();
+                            FirebaseUser user = task.getResult().getUser();
+                            FirebaseUser user1 = FirebaseAuth.getInstance().getCurrentUser();
+                            Log.d(TAG, "onComplete: "+user);
+                            Log.d(TAG, "onComplete: display name "+user1.getDisplayName());
+                            Log.d(TAG, "onComplete: email "+user1.getEmail());
+                            Log.d(TAG, "onComplete: phone number "+user1.getPhoneNumber());
+                            Log.d(TAG, "onComplete: provider id "+user1.getProviderId());
+                            Log.d(TAG, "onComplete: uid "+user1.getUid());
                             // ...
                         } else {
                             // Sign in failed, display a message and update the UI
