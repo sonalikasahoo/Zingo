@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,9 +19,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
+import Adapters.RetailersAdapter;
+import POJOs.RetailerElements;
+
 public class home_page extends AppCompatActivity {
 
     public static final String TAG = "pikachu";
+
+    ArrayList<RetailerElements> rtList = new ArrayList<>();
+    RetailersAdapter retailersAdapter;
+    String phNumber = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +38,7 @@ public class home_page extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         Intent receivedIntent = getIntent();
-        final String phNumber = receivedIntent.getStringExtra("phNumber");
+        phNumber = receivedIntent.getStringExtra("phNumber");
 
         final TextView name,licence,phone,email,region,address;
         name = (TextView)findViewById(R.id.wh_name);
@@ -35,6 +46,15 @@ public class home_page extends AppCompatActivity {
         phone = (TextView)findViewById(R.id.wh_number);
         email = (TextView)findViewById(R.id.wh_mail);
         address = (TextView)findViewById(R.id.address);
+        region = findViewById(R.id.region);
+
+        RecyclerView rvRetailers = findViewById(R.id.rvRetailers);
+        rvRetailers.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
+        retailersAdapter = new RetailersAdapter(rtList);
+        rvRetailers.setAdapter(retailersAdapter);
+
+        refreshRV();
+        retailersAdapter.notifyDataSetChanged();
 
 
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
@@ -50,6 +70,7 @@ public class home_page extends AppCompatActivity {
                 +", "+dataSnapshot.child("city").getValue().toString() + ", "
                 +dataSnapshot.child("state").getValue().toString() + ", "+
                         dataSnapshot.child("pincode").getValue().toString());
+                region.setText(dataSnapshot.child("region").getValue().toString());
             }
 
             @Override
@@ -58,34 +79,6 @@ public class home_page extends AppCompatActivity {
             }
         });
 
-
-
-
-
-        TextView return1,date1,time1,product1,status1;
-        TextView return2,date2,time2,product2,status2;
-        TextView return3,date3,time3,product3,status3;
-
-        return1 = (TextView)findViewById(R.id.return_1);
-        return2 = (TextView)findViewById(R.id.return_2);
-        return3 = (TextView)findViewById(R.id.return_3);
-
-        date1 = (TextView)findViewById(R.id.date_1);
-        date2 = (TextView)findViewById(R.id.date_2);
-        date3 = (TextView)findViewById(R.id.date_3);
-
-        time1 = (TextView)findViewById(R.id.time_1);
-        time2 = (TextView)findViewById(R.id.time_2);
-        time3 = (TextView)findViewById(R.id.time_3);
-
-        product1 = (TextView)findViewById(R.id.product);
-        product2 = (TextView)findViewById(R.id.product2);
-        product3 = (TextView)findViewById(R.id.product3);
-
-        status1 = (TextView)findViewById(R.id.state);
-        status2 = (TextView)findViewById(R.id.stat2);
-        status3 = (TextView)findViewById(R.id.stats3);
-
         Button addRetailer = (Button)findViewById(R.id.retailer_add);
 
         addRetailer.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +86,36 @@ public class home_page extends AppCompatActivity {
             public void onClick(View view) {
                 Intent home_page;
                home_page = new Intent(getApplicationContext(),add_retailer.class);
+               home_page.putExtra("phNumber", phNumber);
                   startActivity(home_page);
             }
         });
 
+    }
+
+    private void refreshRV() {
+        rtList.clear();
+        final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                .getReference().child("Distributors").child(phNumber).child("Retailers");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
+                    RetailerElements temp = new RetailerElements();
+                    temp.setRtId(dataSnapshot1.getKey());
+                    temp.setRtName(dataSnapshot1.child("rtName").getValue().toString());
+                    temp.setRtContact(dataSnapshot1.child("rtContact").getValue().toString());
+                    temp.setRtAddress(dataSnapshot1.child("rtAddress").getValue().toString());
+                    rtList.add(temp);
+                }
+                retailersAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
