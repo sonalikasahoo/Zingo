@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".add_retailer"></activity>
-        <activity android:name=".home_page" />
+        <activity android:name=".CartScreen"></activity>
+        <activity
+            android:name=".add_retailer"
+            android:label="Add Retailer" />
+        <activity
+            android:name=".home_page"
+            android:label="Home" />
         <activity android:name=".signup" />
         <activity android:name=".MainActivity">
             <intent-filter>

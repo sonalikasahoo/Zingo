@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,12 +42,13 @@ public class home_page extends AppCompatActivity {
         Intent receivedIntent = getIntent();
         phNumber = receivedIntent.getStringExtra("phNumber");
 
-        final TextView name,licence,phone,email,region,address;
-        name = (TextView)findViewById(R.id.wh_name);
-        licence = (TextView)findViewById(R.id.license_no);
-        phone = (TextView)findViewById(R.id.wh_number);
-        email = (TextView)findViewById(R.id.wh_mail);
-        address = (TextView)findViewById(R.id.address);
+
+        final TextView name, licence, phone, email, region, address;
+        name = (TextView) findViewById(R.id.wh_name);
+        licence = (TextView) findViewById(R.id.license_no);
+        phone = (TextView) findViewById(R.id.wh_number);
+        email = (TextView) findViewById(R.id.wh_mail);
+        address = (TextView) findViewById(R.id.address);
         region = findViewById(R.id.region);
 
         RecyclerView rvRetailers = findViewById(R.id.rvRetailers);
@@ -67,8 +70,8 @@ public class home_page extends AppCompatActivity {
                 phone.setText(phNumber);
                 email.setText(dataSnapshot.child("email").getValue().toString());
                 address.setText(dataSnapshot.child("address1").getValue().toString()
-                +", "+dataSnapshot.child("city").getValue().toString() + ", "
-                +dataSnapshot.child("state").getValue().toString() + ", "+
+                        + ", " + dataSnapshot.child("city").getValue().toString() + ", "
+                        + dataSnapshot.child("state").getValue().toString() + ", " +
                         dataSnapshot.child("pincode").getValue().toString());
                 region.setText(dataSnapshot.child("region").getValue().toString());
             }
@@ -79,19 +82,21 @@ public class home_page extends AppCompatActivity {
             }
         });
 
-        Button addRetailer = (Button)findViewById(R.id.retailer_add);
+
+        Button addRetailer = (Button) findViewById(R.id.retailer_add);
 
         addRetailer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home_page;
-               home_page = new Intent(getApplicationContext(),add_retailer.class);
-               home_page.putExtra("phNumber", phNumber);
-                  startActivity(home_page);
+                home_page = new Intent(getApplicationContext(), add_retailer.class);
+                home_page.putExtra("phNumber", phNumber);
+                startActivity(home_page);
             }
         });
 
     }
+
 
     private void refreshRV() {
         rtList.clear();
@@ -101,7 +106,7 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     RetailerElements temp = new RetailerElements();
                     temp.setRtId(dataSnapshot1.getKey());
                     temp.setRtName(dataSnapshot1.child("rtName").getValue().toString());
@@ -117,5 +122,24 @@ public class home_page extends AppCompatActivity {
 
             }
         });
+
+
     }
+
+    /*@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(menu.menu_from_home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(this, add_retailer.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }*/
 }

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Zingo</string>
+    <string name="policy_text1">Hindustan Unilever Ltd (HUL) is committed to meeting the needs of customers and consumers in an environmentally sound manner, through continuous improvement in environmental performance in all our activities. Management at all levels, jointly with employees, is responsible and will be held accountable for company’s environmental performance.
+    \nAccordingly, HUL’s aims are to:\n\n1. Ensure safety of its products and operations for the environment by using standards of environmental safety, which are scientifically sustainable and commonly acceptable.
+        \n\n2. Develop, introduce and maintain environmental management systems across the company to meet the company standards as well as statutory requirements for environment.
+        \n\n3. Verify compliance with these standards through regular auditing.
+        \n\n4. Assess environmental impact of all its activities and set continual improvement objectives and targets and review these periodically to ensure that these are being met at the individual unit and corporate level.
+        \n\n5. Reduce waste, conserve energy and explore opportunities for reuse and recycle.
+        \n\n6. Involve all employees in the implementation of this Policy and provide appropriate training.
+        \n\n7. Provide for dissemination of information to employees on environmental objectives and performance through suitable communication networks.
+        \n\n8. Encourage suppliers and co-packers to develop and employ environmentally superior processes and ingredients and co-operate with other members of the supply chain to improve overall environmental performance.
+        \n\n9. Work in partnership with external bodies and Government agencies to promote environmental care, increase understanding of environmental issues and disseminate good practices.
+        \n
+    </string>
 </resources>

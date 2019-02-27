@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".e_waste">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/e_waste"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_green"
+            android:textStyle="bold"
+            android:text="E. WASTE MANAGEMENT POLICY"
+            android:layout_marginBottom="10dp"
+            android:textSize="26dp"
+            android:textAppearance="?android:textAppearanceLarge">
+        </TextView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="270dp"
+            android:padding="12dp"
+
+            android:background="@drawable/border_file"
+            android:src="@drawable/policy"/>
+
+        <TextView
+            android:id="@+id/policy_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:text="@string/policy_text1"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-light"
+            />
+
+
+    </LinearLayout>
+</ScrollView>
