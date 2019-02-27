@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".account_settings">
+
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/truck"
+            android:padding="16dp"/>
+        <Button
+            android:id="@+id/change_pass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"
+            android:text=" CHANGE PASSWORD " />
+
+        <Button
+            android:id="@+id/add_cart"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"
+            android:text=" VIEW CART " />
+
+        <Button
+            android:id="@+id/ewaste_policy"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"
+            android:text=" E-WASTE MANAGEMENT POLICY " />
+
+        <Button
+            android:id="@+id/view_retailer"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"
+            android:text=" VIEW RETAILER " />
+</LinearLayout>
+
