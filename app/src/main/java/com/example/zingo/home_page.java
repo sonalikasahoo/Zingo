@@ -137,7 +137,25 @@ public class home_page extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            Intent settingsIntent = new Intent(this, add_retailer.class);
+//            Intent settingsIntent = new Intent(this, add_retailer.class);
+//            startActivity(settingsIntent);
+            //TODO : implement change password
+            return true;
+        }
+        else if (id == R.id.action_goto_cart)
+        {
+            Intent settingsIntent = new Intent(this, CartScreen.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        else if(id==R.id.action_viewRetailers)
+        {
+            //TODO : Send intent to retailer
+            return true;
+        }
+        else if(id==R.id.action_goto_policies)
+        {
+            Intent settingsIntent = new Intent(this, e_waste.class);
             startActivity(settingsIntent);
             return true;
         }
