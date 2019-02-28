@@ -17,6 +17,7 @@
             android:name=".home_page"
             android:label="Home" />
         <activity android:name=".signup" />
+        <activity android:name=".e_waste" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
