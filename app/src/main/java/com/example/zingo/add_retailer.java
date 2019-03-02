@@ -57,7 +57,7 @@ public class add_retailer extends AppCompatActivity {
                         rd.setRtContact(rtContact);
                         rd.setRtAddress(rtAddress);
                         Log.d(TAG, "onDataChange: Adding Retailer");
-                        databaseReference.child("Retailers").child(rtId)
+                        databaseReference.child("Retailers").push()
                                 .setValue(rd);
                         Toast.makeText(add_retailer.this, "Retailer details addded!",
                                 Toast.LENGTH_SHORT).show();
