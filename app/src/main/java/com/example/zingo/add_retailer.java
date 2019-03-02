@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import POJOs.RetailerDetails;
+import POJOs.geoloc;
 
 public class add_retailer extends AppCompatActivity {
 
@@ -28,12 +29,10 @@ public class add_retailer extends AppCompatActivity {
         setContentView(R.layout.activity_add_retailer);
 
         Intent receivedIntent = getIntent();
-        final String phNumber = receivedIntent.getStringExtra("phNumber");
 
-        final EditText name,uid,number,address;
-
+        final EditText name,number,address,uid;
+        uid = (EditText)findViewById(R.id.retailer_id);
         name = (EditText)findViewById(R.id.name_retail);
-        uid = (EditText)findViewById(R.id.id_retail);
         number = (EditText)findViewById(R.id.number_retail);
         address = (EditText)findViewById(R.id.address_retail);
 
@@ -42,22 +41,26 @@ public class add_retailer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: add retailer in addretailer");
+                final String rtId = name.getText().toString();
                 final String rtName = name.getText().toString();
-                final String rtId = uid.getText().toString();
                 final String rtContact = number.getText().toString();
                 final String rtAddress = address.getText().toString();
 
                 final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
-                        .getReference().child("Distributors").child(phNumber);
+                        .getReference().child("distributors").child("d1");
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         RetailerDetails rd = new RetailerDetails();
-                        rd.setRtName(rtName);
-                        rd.setRtContact(rtContact);
-                        rd.setRtAddress(rtAddress);
+                        geoloc loc = new geoloc();
+                        loc.setLat("28.5494");
+                        loc.setLoc("77.2001");
+                        rd.setName(rtName);
+                        rd.setContact(rtContact);
+                        rd.setAddress(rtAddress);
+                        rd.setGeoLoc(loc);
                         Log.d(TAG, "onDataChange: Adding Retailer");
-                        databaseReference.child("Retailers").push()
+                        databaseReference.child("retailers").child(rtId)
                                 .setValue(rd);
                         Toast.makeText(add_retailer.this, "Retailer details addded!",
                                 Toast.LENGTH_SHORT).show();

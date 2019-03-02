@@ -1,29 +1,38 @@
 package POJOs;
 
 public class RetailerDetails {
-    private String rtName, rtContact, rtAddress;
+    private String name, contact, address;
+    private geoloc geoLoc;
 
-    public String getRtName() {
-        return rtName;
+    public String getName() {
+        return name;
     }
 
-    public void setRtName(String rtName) {
-        this.rtName = rtName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRtContact() {
-        return rtContact;
+    public String getContact() {
+        return contact;
     }
 
-    public void setRtContact(String rtContact) {
-        this.rtContact = rtContact;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
-    public String getRtAddress() {
-        return rtAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setRtAddress(String rtAddress) {
-        this.rtAddress = rtAddress;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public geoloc getGeoLoc() {
+        return geoLoc;
+    }
+
+    public void setGeoLoc(geoloc geoLoc) {
+        this.geoLoc = geoLoc;
     }
 }

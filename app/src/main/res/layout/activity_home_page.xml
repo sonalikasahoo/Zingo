@@ -37,14 +37,6 @@
 
 
         <TextView
-            android:id="@+id/wh_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorAccent"
-            android:text="Name" />
-        <TextView
             android:id="@+id/license_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,14 +69,7 @@
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Address" />
-        <TextView
-            android:id="@+id/region"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorAccent"
-            android:text="Region" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -105,17 +90,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/retailer_add"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_gravity="center"
-            android:background="@color/blue"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:layout_marginBottom="20dp"
-            android:text=" ADD A RETAILER " />
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btSeeCart"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:background="@color/blue"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="See Cart" />
+            <Button
+                android:id="@+id/retailer_add"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:background="@color/blue"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text=" ADD A RETAILER " />
+
+        </LinearLayout>
     </LinearLayout>
 
 
