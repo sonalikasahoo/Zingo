@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id= "@+id/all_retail"
+    android:orientation="vertical"
     tools:context=".retailer_list">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        app:srcCompat="@drawable/pink" />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:orientation="vertical"
+         android:layout_height="match_parent">
+         <TextView
+             android:id="@+id/retail_id"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="45dp"
+             android:padding="2dp"
+             android:text="Return number 1"
+             android:textColor="@color/blue"
+             android:textSize="18dp" />
+         <TextView
+             android:id="@+id/retail_name"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="45dp"
+             android:padding="2dp"
+             android:text="Return number 1"
+             android:textColor="@color/blue"
+             android:textSize="18dp" />
+         <TextView
+             android:id="@+id/retail_number"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="45dp"
+             android:padding="2dp"
+             android:text="Return number 1"
+             android:textColor="@color/blue"
+             android:textSize="18dp" />
+         <TextView
+             android:id="@+id/retail_address"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="45dp"
+             android:padding="2dp"
+             android:text="Return number 1"
+             android:textColor="@color/blue"
+             android:textSize="18dp" />
 
-</android.support.constraint.ConstraintLayout>
+
+
+     </LinearLayout>
+
+
+    </LinearLayout>
+</ListView>
