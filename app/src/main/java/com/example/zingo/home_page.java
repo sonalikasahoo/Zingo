@@ -32,20 +32,15 @@ public class home_page extends AppCompatActivity {
 
     ArrayList<RetailerElements> rtList = new ArrayList<>();
     RetailersAdapter retailersAdapter;
-    String phNumber = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        Intent receivedIntent = getIntent();
-        phNumber = receivedIntent.getStringExtra("phNumber");
 
-
-        final TextView name, licence, phone, email, region, address;
-        name = (TextView) findViewById(R.id.wh_name);
-        licence = (TextView) findViewById(R.id.license_no);
+        final TextView name, license, phone, email, region, address;
+        license = (TextView) findViewById(R.id.license_no);
         phone = (TextView) findViewById(R.id.wh_number);
         email = (TextView) findViewById(R.id.wh_mail);
         address = (TextView) findViewById(R.id.address);
@@ -61,19 +56,14 @@ public class home_page extends AppCompatActivity {
 
 
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
-                .getReference().child("Distributors").child(phNumber);
+                .getReference().child("distributors").child("d1");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                name.setText(dataSnapshot.child("name").getValue().toString());
-                licence.setText(dataSnapshot.child("license").getValue().toString());
-                phone.setText(phNumber);
-                email.setText(dataSnapshot.child("email").getValue().toString());
-                address.setText(dataSnapshot.child("address1").getValue().toString()
-                        + ", " + dataSnapshot.child("city").getValue().toString() + ", "
-                        + dataSnapshot.child("state").getValue().toString() + ", " +
-                        dataSnapshot.child("pincode").getValue().toString());
-                region.setText(dataSnapshot.child("region").getValue().toString());
+                license.setText("License No.: " + dataSnapshot.child("licenseno").getValue().toString());
+                phone.setText("Phone No.: " + dataSnapshot.child("contact").getValue().toString());
+                email.setText("Email Id: "+dataSnapshot.child("email").getValue().toString());
+                address.setText("Address: "+dataSnapshot.child("address").getValue().toString());
             }
 
             @Override
@@ -110,7 +100,7 @@ public class home_page extends AppCompatActivity {
         Log.d(TAG, "refreshRV: Refreshing Recycler view");
         rtList.clear();
         final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
-                .getReference().child("Distributors").child(phNumber).child("Retailers");
+                .getReference().child("distributors").child("d1").child("retailers");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -118,9 +108,9 @@ public class home_page extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     RetailerElements temp = new RetailerElements();
                     temp.setRtId(dataSnapshot1.getKey());
-                    temp.setRtName(dataSnapshot1.child("rtName").getValue().toString());
-                    temp.setRtContact(dataSnapshot1.child("rtContact").getValue().toString());
-                    temp.setRtAddress(dataSnapshot1.child("rtAddress").getValue().toString());
+                    temp.setRtName(dataSnapshot1.child("name").getValue().toString());
+                    temp.setRtContact(dataSnapshot1.child("contact").getValue().toString());
+                    temp.setRtAddress(dataSnapshot1.child("address").getValue().toString());
                     rtList.add(temp);
                 }
                 retailersAdapter.notifyDataSetChanged();

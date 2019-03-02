@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import POJOs.RetailerDetails;
+import POJOs.geoloc;
 
 public class add_retailer extends AppCompatActivity {
 
@@ -46,16 +47,20 @@ public class add_retailer extends AppCompatActivity {
                 final String rtAddress = address.getText().toString();
 
                 final DatabaseReference databaseReference = FirebaseDatabase.getInstance()
-                        .getReference().child("Distributors").child("d1");
+                        .getReference().child("distributors").child("d1");
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         RetailerDetails rd = new RetailerDetails();
+                        geoloc loc = new geoloc();
+                        loc.setLat("28.5494");
+                        loc.setLoc("77.2001");
                         rd.setName(rtName);
                         rd.setContact(rtContact);
                         rd.setAddress(rtAddress);
+                        rd.setGeoLoc(loc);
                         Log.d(TAG, "onDataChange: Adding Retailer");
-                        databaseReference.child("Retailers").child(rtId)
+                        databaseReference.child("retailers").child(rtId)
                                 .setValue(rd);
                         Toast.makeText(add_retailer.this, "Retailer details addded!",
                                 Toast.LENGTH_SHORT).show();

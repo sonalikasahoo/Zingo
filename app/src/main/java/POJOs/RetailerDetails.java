@@ -2,6 +2,7 @@ package POJOs;
 
 public class RetailerDetails {
     private String name, contact, address;
+    private geoloc geoLoc;
 
     public String getName() {
         return name;
@@ -25,5 +26,13 @@ public class RetailerDetails {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public geoloc getGeoLoc() {
+        return geoLoc;
+    }
+
+    public void setGeoLoc(geoloc geoLoc) {
+        this.geoLoc = geoLoc;
     }
 }

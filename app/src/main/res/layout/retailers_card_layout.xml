@@ -30,7 +30,7 @@
                     android:layout_width="18dp"
                     android:layout_height="18dp" />
                 <TextView
-                    android:id="@+id/tvRtId"
+                    android:id="@+id/tvRtName"
                     android:text="Retailer Id"
                     android:textSize="20sp"
                     android:layout_width="match_parent"
@@ -46,23 +46,6 @@
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@drawable/user_logo"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp" />
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:id="@+id/tvRtName"
-                    android:text="Retailer Name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_height="wrap_content">
@@ -73,7 +56,7 @@
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:id="@+id/tvRtContact"
-                    android:text="Hotel"
+                    android:text="Contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -90,7 +73,7 @@
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:id="@+id/tvRtAddress"
-                    android:text="Hotel"
+                    android:text="Address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>

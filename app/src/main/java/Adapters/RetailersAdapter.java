@@ -34,7 +34,6 @@ public class RetailersAdapter extends RecyclerView.Adapter<RetailersAdapter.Reta
     @Override
     public void onBindViewHolder(@NonNull RetailerViewHolder retailerViewHolder, int i) {
         RetailerElements oneEle = retailersList.get(i);
-        retailerViewHolder.tvRtId.setText(oneEle.getRtId());
         retailerViewHolder.tvRtName.setText(oneEle.getRtName());
         retailerViewHolder.tvRtContact.setText(oneEle.getRtContact());
         retailerViewHolder.tvAddress.setText(oneEle.getRtAddress());
@@ -49,7 +48,6 @@ public class RetailersAdapter extends RecyclerView.Adapter<RetailersAdapter.Reta
         TextView tvRtId, tvRtName, tvRtContact, tvAddress;
         public RetailerViewHolder(View itemView) {
             super(itemView);
-            tvRtId = itemView.findViewById(R.id.tvRtId);
             tvRtName = itemView.findViewById(R.id.tvRtName);
             tvRtContact = itemView.findViewById(R.id.tvRtContact);
             tvAddress = itemView.findViewById(R.id.tvRtAddress);

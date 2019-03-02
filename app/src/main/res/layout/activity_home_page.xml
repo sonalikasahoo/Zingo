@@ -37,14 +37,6 @@
 
 
         <TextView
-            android:id="@+id/wh_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="Name"
-            android:textColor="@color/colorAccent"
-            android:textSize="18dp" />
-        <TextView
             android:id="@+id/license_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,14 +69,7 @@
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Address" />
-        <TextView
-            android:id="@+id/region"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorAccent"
-            android:text="Region" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
