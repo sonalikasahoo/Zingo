@@ -84,13 +84,21 @@ public class home_page extends AppCompatActivity {
 
 
         Button addRetailer = (Button) findViewById(R.id.retailer_add);
+        Button seeCart = findViewById(R.id.btSeeCart);
 
         addRetailer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(getApplicationContext(), add_retailer.class);
-                i.putExtra("phNumber", phNumber);
+                startActivity(i);
+            }
+        });
+
+        seeCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), CartScreen.class);
                 startActivity(i);
             }
         });

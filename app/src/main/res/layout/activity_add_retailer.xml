@@ -22,21 +22,33 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="12dp"
-                android:text="RETAILER ID"
+                android:text="RETAILER NAME"
                 android:textColor="@color/colorAccent"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_retail"
+                android:id="@+id/retailer_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="Enter retailer id"
+                android:hint="Enter name"
                 android:inputType="text"
                 android:padding="10dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="12dp"
+                android:text="RETAILER CONTACT NUMBER"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
 
