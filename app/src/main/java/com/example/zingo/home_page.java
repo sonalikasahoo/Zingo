@@ -88,7 +88,7 @@ public class home_page extends AppCompatActivity {
         seeCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), CartScreen.class);
+                Intent i = new Intent(getApplicationContext(), ViewCart.class);
                 startActivity(i);
             }
         });

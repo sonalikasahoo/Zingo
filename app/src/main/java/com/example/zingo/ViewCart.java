@@ -1,5 +1,6 @@
 package com.example.zingo;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,8 +8,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,11 +20,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import Adapters.CartAdapter;
-import Adapters.RetailersAdapter;
 import POJOs.CartElements;
-import POJOs.RetailerElements;
 
-public  class cart_view extends AppCompatActivity {
+public class ViewCart extends AppCompatActivity {
+
 
     ArrayList<CartElements> cartList = new ArrayList<>();
     CartAdapter cartAdapter;
@@ -31,7 +31,7 @@ public  class cart_view extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart_view);
+        setContentView(R.layout.activity_view_cart);
 
         Log.d("abc", "onCreate: cart started");
 
@@ -43,8 +43,17 @@ public  class cart_view extends AppCompatActivity {
         refreshRV();
         cartAdapter.notifyDataSetChanged();
 
+        Button btInitiate = findViewById(R.id.initiate);
+        btInitiate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ViewCart.this, "Return Request Initiated",
+                        Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(ViewCart.this, home_page.class);
+                startActivity(i);
+            }
+        });
     }
-
     private void refreshRV() {
         Log.d("abc", "refreshRV: Refreshing cart Recycler view");
         cartList.clear();
@@ -56,14 +65,17 @@ public  class cart_view extends AppCompatActivity {
 
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     CartElements temp = new CartElements();
-                    if(dataSnapshot1.child("ret1").getValue().equals("")) {
-                        temp.setBarcode(dataSnapshot1.child("barcode").getValue().toString());
-                        temp.setBatchno(dataSnapshot1.child("batchno").getValue().toString());
-                        temp.setExp(dataSnapshot1.child("exp").getValue().toString());
-                        temp.setMfg(dataSnapshot1.child("mfg").getValue().toString());
-                        temp.setMrp(dataSnapshot1.child("mrp").getValue().toString());
-                        temp.setPname(dataSnapshot1.child("pname").getValue().toString());
-                        temp.setReturnId(dataSnapshot1.child("returnId").getValue().toString());
+                    Log.d("abc", "onDataChange: "+dataSnapshot1.getValue());
+                    Log.d("abc", "onDataChange: "+dataSnapshot1.child("ret1").getValue().toString().equals(""));
+                    if(dataSnapshot1.child("ret1").getValue().toString().equals("")) {
+                        Log.d("abc", "onDataChange: list add");
+                        temp.setBarcode("Barcode: " + dataSnapshot1.child("barcode").getValue().toString());
+                        temp.setBatchno("Batch Number: " + dataSnapshot1.child("batchno").getValue().toString());
+                        temp.setExp("Expiry Date: " + dataSnapshot1.child("exp").getValue().toString());
+                        temp.setMfg("Manufacture Date: " + dataSnapshot1.child("mfg").getValue().toString());
+                        temp.setMrp("MRP: " + dataSnapshot1.child("mrp").getValue().toString());
+                        temp.setPname("Product Name: " + dataSnapshot1.child("pname").getValue().toString());
+                        temp.setReturnId("Return Id: "+dataSnapshot1.getKey());
                         cartList.add(temp);
                     }
                 }

@@ -17,7 +17,7 @@ public class account_settings extends AppCompatActivity {
         change_pass = (Button)findViewById(R.id.change_pass);
         cart = (Button)findViewById(R.id.add_cart);
         waste = (Button)findViewById(R.id.ewaste_policy);
-        retail_view = (Button)findViewById(R.id.view_retailer);
+        //retail_view = (Button)findViewById(R.id.view_retailer);
 
         waste.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,12 +39,12 @@ public class account_settings extends AppCompatActivity {
             }
         });
 
-        retail_view.setOnClickListener(new View.OnClickListener() {
+        /*retail_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent retailer = new Intent(getApplicationContext(),retailer_list.class);
                 startActivity(retailer);
             }
-        });
+        });*/
     }
 }
