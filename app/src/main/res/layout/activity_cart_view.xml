@@ -19,14 +19,17 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:text = "RETURN BAG"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:textColor="@color/colorAccent"
-        android:textSize="26dp"/>
+        android:textSize="22dp"/>
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvCart"
         android:layout_width="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:layout_height="wrap_content" />
 
 

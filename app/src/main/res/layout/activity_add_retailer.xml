@@ -20,8 +20,8 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="12dp"
+                android:layout_margin="12dp"
+                android:padding="8dp"
                 android:text="RETAILER NAME"
                 android:textColor="@color/colorAccent"
                 android:textSize="18dp"
@@ -31,25 +31,16 @@
                 android:id="@+id/retailer_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:ems="10"
                 android:gravity="center"
+                android:background="@drawable/button_border"
                 android:hint="Enter name"
                 android:inputType="text"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:textStyle="bold" />
 
 
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="12dp"
-                android:text="RETAILER CONTACT NUMBER"
-                android:textColor="@color/colorAccent"
-                android:textSize="18dp"
-                android:textStyle="bold" />
 
 
             <TextView
@@ -67,12 +58,13 @@
                 android:id="@+id/name_retail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:ems="10"
+                android:background="@drawable/button_border"
                 android:gravity="center"
                 android:hint="Enter name"
                 android:inputType="text"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:textStyle="bold" />
 
 
@@ -91,12 +83,13 @@
                 android:id="@+id/number_retail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:ems="10"
                 android:gravity="center"
+                android:background="@drawable/button_border"
                 android:hint="Enter phone number"
                 android:inputType="text"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:textStyle="bold" />
 
 
@@ -104,8 +97,8 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="12dp"
+                android:layout_margin="12dp"
+                android:padding="8dp"
                 android:text="RETAILER ADDRESS"
                 android:textColor="@color/colorAccent"
                 android:textSize="18dp"
@@ -115,24 +108,26 @@
                 android:id="@+id/address_retail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:ems="10"
+                android:background="@drawable/button_border"
                 android:gravity="center"
                 android:hint="Enter address"
                 android:inputType="text"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/retailer_add"
-                android:layout_width="300dp"
+                android:layout_width="200dp"
+
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@color/blue"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button"
                 android:padding="5dp"
                 android:text="SUBMIT RETAILER "
-                android:textColor="@color/white"
+                android:textColor="@color/colorAccent"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 

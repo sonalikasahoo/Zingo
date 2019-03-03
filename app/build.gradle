@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.zingo"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -35,5 +35,8 @@ dependencies {
 
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
+
+    //add loader support libraries
+    implementation 'com.steelkiwi:dots-loader-view:1.0.0'
 
 }

@@ -23,48 +23,62 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:background="@color/light"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="22dp"
             android:text="Account info "
             tools:ignore="DuplicateIds,InvalidId" />
         <ImageView
             android:layout_width="250dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="85dp"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/user_logo"
-            android:padding="10dp"/>
+            android:padding="8dp"/>
 
 
         <TextView
             android:id="@+id/license_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_height="35dp"
             android:padding="5dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Licence No." />
 
         <TextView
             android:id="@+id/wh_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="12dp"
             android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Contact Number" />
         <TextView
             android:id="@+id/wh_mail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="12dp"
             android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
             android:text="Email Address" />
         <TextView
             android:id="@+id/address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="12dp"
             android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorAccent"
@@ -78,8 +92,10 @@
             android:background="#a09d9d"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
             android:padding="5dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"
@@ -88,11 +104,13 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvRetailers"
             android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
             android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btSeeCart"
@@ -101,8 +119,9 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:layout_gravity="center"
-                android:background="@color/blue"
-                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
@@ -115,8 +134,9 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:layout_gravity="center"
-                android:background="@color/blue"
-                android:textColor="@color/white"
+                android:background="@drawable/button"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="12dp"
                 android:textSize="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"

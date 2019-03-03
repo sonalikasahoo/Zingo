@@ -10,21 +10,24 @@
 
 
         <ImageView
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
             android:src="@drawable/truck"
-            android:padding="16dp"/>
+            android:padding="6dp"/>
         <Button
             android:id="@+id/change_pass"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:background="@color/blue"
-            android:textColor="@color/white"
-            android:textSize="15dp"
+            android:background="@drawable/button"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:layout_marginBottom="20dp"
             android:text=" CHANGE PASSWORD " />
 
@@ -34,9 +37,10 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:background="@color/blue"
-            android:textColor="@color/white"
-            android:textSize="15dp"
+            android:background="@drawable/button"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
             android:layout_marginBottom="20dp"
             android:text=" VIEW CART " />
 
@@ -46,9 +50,10 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:background="@color/blue"
-            android:textColor="@color/white"
-            android:textSize="15dp"
+            android:background="@drawable/button"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:textStyle="bold"
             android:layout_marginBottom="20dp"
             android:text=" E-WASTE MANAGEMENT POLICY " />
 
@@ -58,9 +63,10 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:layout_gravity="center"
-            android:background="@color/blue"
-            android:textColor="@color/white"
-            android:textSize="15dp"
+            android:background="@drawable/button"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
             android:layout_marginBottom="20dp"
             android:text=" VIEW RETAILER " />
 </LinearLayout>
