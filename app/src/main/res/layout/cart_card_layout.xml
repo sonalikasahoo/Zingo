@@ -35,7 +35,7 @@
             android:orientation="vertical"
             android:padding="5dp"
             android:layout_weight="60"
-            android:background="@color/cardview_light_background"
+            android:background="@color/light"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
 
@@ -43,11 +43,13 @@
                 android:layout_marginLeft="5dp"
                 android:id="@+id/tvPname"
                 android:layout_width="match_parent"
+                android:textStyle="bold"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_marginLeft="5dp"
                 android:id="@+id/tvBarcode"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -60,12 +62,14 @@
             <TextView
                 android:layout_marginLeft="5dp"
                 android:id="@+id/tvExp"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_marginLeft="5dp"
                 android:id="@+id/tvMrp"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -78,6 +82,7 @@
             <TextView
                 android:layout_marginLeft="5dp"
                 android:id="@+id/tvBatchno"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

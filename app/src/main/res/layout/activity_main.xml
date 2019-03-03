@@ -5,22 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center_vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/hul_logo"/>
     <EditText
         android:id="@+id/user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter email id"
         android:inputType="text"
-        android:padding="10dp"
+        android:padding="8dp"
+        android:background="@drawable/button_border"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
 
@@ -28,14 +35,16 @@
         android:id="@+id/user_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter password"
         android:inputType="text"
-        android:padding="10dp"
+        android:padding="8dp"
+        android:background="@drawable/button_border"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <Button
@@ -45,12 +54,14 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-        android:background="@color/blue"
-        android:padding="5dp"
+        android:shadowColor="@color/black"
+        android:background="@drawable/button"
+        android:padding="8dp"
         android:text="Login"
-        android:textColor="@color/white"
+        android:textColor="@color/colorAccent"
         android:textSize="18dp"
         android:textStyle="bold" />
+
 
     <Button
         android:id="@+id/signup"
@@ -58,10 +69,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="@color/blue"
-        android:padding="5dp"
-        android:text="SUBMIT RETAILER "
-        android:textColor="@color/white"
+        android:background="@drawable/button"
+        android:padding="8dp"
+        android:text="SIGNUP "
+        android:textColor="@color/colorAccent"
         android:textSize="18dp"
         android:textStyle="bold" />
 

@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ViewCart"></activity>
-        <activity android:name=".cart_screen" />
         <activity android:name=".CartScreen" />
         <activity
             android:name=".add_retailer"
