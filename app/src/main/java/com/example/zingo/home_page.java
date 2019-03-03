@@ -140,12 +140,7 @@ public class home_page extends AppCompatActivity {
             //TODO : implement change password
             return true;
         }
-        else if (id == R.id.action_goto_cart)
-        {
-            Intent settingsIntent = new Intent(this, CartScreen.class);
-            startActivity(settingsIntent);
-            return true;
-        }
+
         else if(id==R.id.action_viewRetailers)
         {
             //TODO : Send intent to retailer
