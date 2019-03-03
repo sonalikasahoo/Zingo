@@ -215,9 +215,19 @@ public class ViewCart extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     CartElements temp = new CartElements();
                     Log.d("abc", "onDataChange: "+dataSnapshot1.getValue());
-                    Log.d("abc", "onDataChange: "+dataSnapshot1.child("ret1").getValue().toString().equals(""));
+                    Log.d("abc", "onDataChange: "+dataSnapshot1.child("ret1"));
+                    Log.d("abc", "onDataChange: yayee"+dataSnapshot1.child("ret1").getValue());
+                    //Log.d("abc", "onDataChange: abcde"+(dataSnapshot1.child("ret1").getValue()==null));
+                    //Log.d("abc", "onDataChange: "+dataSnapshot1.child("ret1").getValue().toString().equals(""));
                     if(dataSnapshot1.child("ret1").getValue().toString().equals("")) {
                         Log.d("abc", "onDataChange: list add");
+                        if(dataSnapshot1.child("barcode").getValue().equals(null) ||
+                                dataSnapshot1.child("batchno").getValue().equals(null) ||
+                                dataSnapshot1.child("exp").getValue().equals(null) ||
+                                dataSnapshot1.child("mfg").getValue().equals(null) ||
+                                dataSnapshot1.child("mrp").getValue().equals(null) ||
+                                dataSnapshot1.child("pname").getValue().equals(null))
+                            break;
                         temp.setBarcode("Barcode: " + dataSnapshot1.child("barcode").getValue().toString());
                         temp.setBatchno("Batch Number: " + dataSnapshot1.child("batchno").getValue().toString());
                         temp.setExp("Expiry Date: " + dataSnapshot1.child("exp").getValue().toString());
