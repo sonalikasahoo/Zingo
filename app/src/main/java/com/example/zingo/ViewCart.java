@@ -66,7 +66,10 @@ public class ViewCart extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     CartElements temp = new CartElements();
                     Log.d("abc", "onDataChange: "+dataSnapshot1.getValue());
-                    Log.d("abc", "onDataChange: "+dataSnapshot1.child("ret1").getValue().toString().equals(""));
+                    Log.d("abc", "onDataChange: "+dataSnapshot1.child("ret1"));
+                    Log.d("abc", "onDataChange: yayee"+dataSnapshot1.child("ret1").getValue());
+                    //Log.d("abc", "onDataChange: abcde"+(dataSnapshot1.child("ret1").getValue()==null));
+                    //Log.d("abc", "onDataChange: "+dataSnapshot1.child("ret1").getValue().toString().equals(""));
                     if(dataSnapshot1.child("ret1").getValue().toString().equals("")) {
                         Log.d("abc", "onDataChange: list add");
                         if(dataSnapshot1.child("barcode").getValue().equals(null) ||
