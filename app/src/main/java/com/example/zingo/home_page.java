@@ -28,6 +28,8 @@ import POJOs.RetailerElements;
 
 public class home_page extends AppCompatActivity {
 
+
+
     public static final String TAG = "pikachu";
 
     ArrayList<RetailerElements> rtList = new ArrayList<>();
@@ -140,11 +142,11 @@ public class home_page extends AppCompatActivity {
             //TODO : implement change password
             return true;
         }
-        else if(id==R.id.action_viewRetailers)
-        {
-            //TODO : Send intent to retailer
-            return true;
-        }
+//        else if(id==R.id.action_viewRetailers)
+//        {
+//            //TODO : Send intent to retailer
+//            return true;
+//        }
         else if(id==R.id.action_goto_policies)
         {
             Intent settingsIntent = new Intent(this, e_waste.class);

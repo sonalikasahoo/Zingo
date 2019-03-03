@@ -42,9 +42,8 @@ public class ViewCart extends AppCompatActivity {
                 urlParameters.put("apikey","EEILC1D86MSS75XR6T4055QBSE8KI1Z7");
                 urlParameters.put("secret","QHH6V8VY1GNLX1X3");
                 urlParameters.put("usetype","stage");
-              //  urlParameters.put("phone", "7503917865");
-                urlParameters.put("message", URLEncoder.encode("A Return with Return ID -L_-hBHwrzQfkodviRul, is initiated by distributor D1 to Hindustan Unilever limited, on 20190303_021505.\nFor more information contact 9561278478","UTF-8"));
-                //  Log.d("xyz", "run: message1");
+                urlParameters.put("phone", "917503927865");
+                urlParameters.put("message", URLEncoder.encode("A return with products Axe deo, Bru Instant, Domex, Lifebuoy sanitizer has been sent to Hindustan Unilever Limited from Distributor D1/nHelpine Number:02239830011","UTF-8"));
                 //urlParameters.put("senderid", senderId);
                 URL obj = new URL("http://www.way2sms.com/api/v1/sendCampaign");
                 // send data
@@ -76,6 +75,7 @@ public class ViewCart extends AppCompatActivity {
             }
         }
     });
+
     Thread t2 = new Thread(new Runnable() {
         @Override
         public void run() {
@@ -87,9 +87,8 @@ public class ViewCart extends AppCompatActivity {
                 urlParameters.put("apikey","EEILC1D86MSS75XR6T4055QBSE8KI1Z7");
                 urlParameters.put("secret","QHH6V8VY1GNLX1X3");
                 urlParameters.put("usetype","stage");
-               // urlParameters.put("phone", "8375860629");
-                urlParameters.put("message", URLEncoder.encode("A Return with Return ID -L_-hBHwrzQfkodviRul, is initiated by distributor D1 to Hindustan Unilever limited on 20190303_021505.\nFor more information contact 9561278478","UTF-8"));
-                //  Log.d("xyz", "run : A Return with Return ID______, is initiated by retailer _______, to distributor __________, on Date_______.\nFor more information contact 9561278478");
+                urlParameters.put("phone", "919013921377");
+                urlParameters.put("message", URLEncoder.encode("A return with products Axe deo, Bru Instant, Domex, Lifebuoy sanitizer has been sent to Hindustan Unilever Limited from Distributor D1/nHelpine Number:02239830011","UTF-8"));
                 //urlParameters.put("senderid", senderId);
                 URL obj = new URL("http://www.way2sms.com/api/v1/sendCampaign");
                 // send data
@@ -121,6 +120,7 @@ public class ViewCart extends AppCompatActivity {
             }
         }
     });
+
     Thread t3 = new Thread(new Runnable() {
         @Override
         public void run() {
@@ -132,9 +132,8 @@ public class ViewCart extends AppCompatActivity {
                 urlParameters.put("apikey","EEILC1D86MSS75XR6T4055QBSE8KI1Z7");
                 urlParameters.put("secret","QHH6V8VY1GNLX1X3");
                 urlParameters.put("usetype","stage");
-              //  urlParameters.put("phone", "9560213528");
-                urlParameters.put("message", URLEncoder.encode("A Return with Return ID -L_-hBHwrzQfkodviRul, is initiated by distributor D1 to Hindustan Unilever limited on 20190303_021505.\nFor more information contact 9561278478","UTF-8"));
-                Log.d("xyz", "run: message3");
+                urlParameters.put("phone", "918630214743");
+                urlParameters.put("message", URLEncoder.encode("A return with products Axe deo, Bru Instant, Domex, Lifebuoy sanitizer has been sent to Hindustan Unilever Limited from Distributor D1/nHelpine Number:02239830011","UTF-8"));
                 //urlParameters.put("senderid", senderId);
                 URL obj = new URL("http://www.way2sms.com/api/v1/sendCampaign");
                 // send data
@@ -166,7 +165,6 @@ public class ViewCart extends AppCompatActivity {
             }
         }
     });
-
 
     ArrayList<CartElements> cartList = new ArrayList<>();
     CartAdapter cartAdapter;
@@ -190,14 +188,14 @@ public class ViewCart extends AppCompatActivity {
         btInitiate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ViewCart.this, "Return Request Initiated",
-                        Toast.LENGTH_SHORT).show();
                 t1.start();
                 Log.d("abc", "onClick: thread1");
                 t2.start();
                 Log.d("abc", "onClick: thread2");
                 t3.start();
                 Log.d("abc", "onClick: thread3");
+                Toast.makeText(ViewCart.this, "Return Request Initiated",
+                        Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(ViewCart.this, home_page.class);
                 startActivity(i);
             }
@@ -222,11 +220,9 @@ public class ViewCart extends AppCompatActivity {
                     if(dataSnapshot1.child("ret1").getValue().toString().equals("")) {
                         Log.d("abc", "onDataChange: list add");
                         if(dataSnapshot1.child("barcode").getValue().equals(null) ||
-                                dataSnapshot1.child("batchno").getValue().equals(null) ||
-                                dataSnapshot1.child("exp").getValue().equals(null) ||
-                                dataSnapshot1.child("mfg").getValue().equals(null) ||
-                                dataSnapshot1.child("mrp").getValue().equals(null) ||
-                                dataSnapshot1.child("pname").getValue().equals(null))
+                           dataSnapshot1.child("batchno").getValue().equals(null) || dataSnapshot1.child("exp").getValue().equals(null) ||
+                           dataSnapshot1.child("mfg").getValue().equals(null) || dataSnapshot1.child("mrp").getValue().equals(null) ||
+                            dataSnapshot1.child("pname").getValue().equals(null))
                             break;
                         temp.setBarcode("Barcode: " + dataSnapshot1.child("barcode").getValue().toString());
                         temp.setBatchno("Batch Number: " + dataSnapshot1.child("batchno").getValue().toString());

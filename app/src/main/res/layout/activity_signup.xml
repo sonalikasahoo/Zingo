@@ -109,9 +109,6 @@
                 android:textStyle="bold"
                 android:padding="8dp"/>
 
-
-
-
             <EditText
                 android:id="@+id/city"
                 android:layout_marginRight="12dp"

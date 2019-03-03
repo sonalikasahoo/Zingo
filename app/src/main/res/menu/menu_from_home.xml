@@ -3,17 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CatalogActivity">
+
     <item
         android:id="@+id/action_settings"
         android:title="Change password"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_goto_cart"
-        android:title="view cart"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_viewRetailers"
-        android:title="view Retailers"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_goto_policies"
